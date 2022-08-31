@@ -7,7 +7,7 @@ on:
     paths:
       - 'src/*.gs'
 jobs:
-  meh:
+  build-dist:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
