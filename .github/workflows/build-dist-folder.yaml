@@ -58,13 +58,16 @@ jobs:
           cat $FF >> $OUTFILE
           pwd
 
-          ## finish, move outfile and HTML files to `dist` folder
+          ## finish, move outfile and support files to `dist` folder
+          
           rm -rf dist
           mkdir -p dist
+          
           mv code.gs ./dist
           
           ## based on solution found here:
           ## https://stackoverflow.com/a/17902999
+          
           ## HTML files are optional
           HTML=./src/*.html
           [[ $(ls $HTML) ]] && cp $HTML ./dist || echo "no-html-files"
@@ -72,7 +75,6 @@ jobs:
           ## JSON files are optional
           JSON=./src/appsscript.json
           [[ $(ls $JSON) ]] && cp $JSON ./dist || echo "no-json-file"
-
 
           ## cleanup
           rm -rf nip
